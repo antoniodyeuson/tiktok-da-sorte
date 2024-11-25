@@ -1,41 +1,49 @@
 // Função para exibir o histórico de sorteios
 function exibirHistorico() {
-    const sorteios = JSON.parse(localStorage.getItem("historico")) || [];
-    let tabela = document.getElementById('historicoTabela').getElementsByTagName('tbody')[0];
-
-    // Limpar a tabela antes de adicionar os novos dados
-    tabela.innerHTML = "";
-
-    // Adicionar cada sorteio à tabela
-    sorteios.forEach(sorteio => {
-        let novaLinha = tabela.insertRow();
-        novaLinha.insertCell(0).innerHTML = sorteio.numero;
-        novaLinha.insertCell(1).innerHTML = sorteio.data;
-        novaLinha.insertCell(2).innerHTML = sorteio.hora;
+    const mesSelecionado = document.getElementById("mesSelecionado").value;
+    const sorteios = JSON.parse(localStorage.getItem("sorteios")) || [];
+    const sorteiosMes = sorteios.filter(sorteio => {
+        const dataSorteio = new Date(sorteio.data);
+        return dataSorteio.getMonth() + 1 === parseInt(mesSelecionado);
     });
-}
 
-// Função para verificar se o administrador tem permissão para limpar o histórico
-function verificarLoginAdmin() {
-    const senha = prompt("Digite a senha para acessar a função de limpar histórico");
-    if (senha === "admin123") {  // Substitua pela senha real
-        document.getElementById('limparHistorico').style.display = 'block';  // Exibe o botão de limpar histórico
-        document.getElementById('acessoAdmin').style.display = 'none';  // Esconde o botão de "Acessar Admin"
+    const resultadoHistorico = document.getElementById("resultadoHistorico");
+    resultadoHistorico.innerHTML = "";
+
+    if (sorteiosMes.length === 0) {
+        resultadoHistorico.innerHTML = "<p>Nenhum sorteio realizado para o mês selecionado.</p>";
     } else {
-        alert('Senha incorreta!');
+        const tabela = document.createElement("table");
+        tabela.classList.add("tabelaHistorico");
+        tabela.innerHTML = `
+            <thead>
+                <tr>
+                    <th>Número Sorteado</th>
+                    <th>Data</th>
+                    <th>Hora</th>
+                </tr>
+            </thead>
+        `;
+        const corpoTabela = document.createElement("tbody");
+        sorteiosMes.forEach(sorteio => {
+            const data = new Date(sorteio.data);
+            const dataFormatada = `${data.getDate()}/${data.getMonth() + 1}/${data.getFullYear()}`;
+            const horaFormatada = data.toLocaleTimeString("pt-BR", { hour12: false });
+
+            corpoTabela.innerHTML += `
+                <tr>
+                    <td>${sorteio.numero}</td>
+                    <td>${dataFormatada}</td>
+                    <td>${horaFormatada}</td>
+                </tr>
+            `;
+        });
+        tabela.appendChild(corpoTabela);
+        resultadoHistorico.appendChild(tabela);
     }
 }
 
-// Função para limpar o histórico
-function limparHistorico() {
-    if (confirm("Tem certeza que deseja limpar o histórico?")) {
-        localStorage.removeItem("historico");
-        alert('Histórico limpo!');
-        exibirHistorico(); // Atualiza a tabela após limpeza
-    }
-}
-
-// Chama a função de exibição do histórico quando a página carrega
+// Verifica o estado do localStorage ao carregar a página
 window.onload = function() {
     exibirHistorico();
 };

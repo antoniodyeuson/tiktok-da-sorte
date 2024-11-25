@@ -24,6 +24,7 @@ header {
   align-items: center; /* Alinha os itens verticalmente */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
+
 /* Container para o conteúdo do cabeçalho */
 .header-content {
   display: flex;
@@ -32,14 +33,12 @@ header {
 }
 
 /* Estilo do GIF */
-.gif-header {
+.gif-header, .gif-moving {
   width: 150px; /* Ajuste o tamanho do GIF */
   height: auto;
 }
-/* Estilo e animação do GIF */
+
 .gif-moving {
-  width: 150px; /* Ajuste o tamanho do GIF conforme necessário */
-  height: auto;
   animation: moveGif 10s linear infinite; /* Animação contínua de 10s */
   position: relative; /* Necessário para o movimento */
 }
@@ -59,12 +58,11 @@ nav {
   display: flex;
   gap: 20px;
   align-items: center;
-  
 }
 
 nav a {
-  background-color: #000; /* Amarelo suave */
-  color: #d4ac0d;
+  background-color: #000;
+  color: #d4ac0d; /* Amarelo suave */
   border: none;
   border-radius: 12px;
   padding: 15px 30px;
@@ -74,8 +72,6 @@ nav a {
   cursor: pointer;
   box-shadow: 0px 5px 10px rgba(255, 204, 0, 0.4);
   transition: background-color 0.3s, transform 0.3s;
-  margin-bottom: 20px; /* Espaçamento entre os botões */
-  
 }
 
 nav a:hover {
@@ -89,7 +85,7 @@ nav a:hover {
 section {
   padding: 80px 20px;
   text-align: center;
-  background-color: #121212; /* Fundo escuro para as seções */
+  background-color: #121212;
 }
 
 h1 {
@@ -107,7 +103,7 @@ p {
 
 /* Botões principais */
 button {
-  background-color: #d4ac0d; /* Amarelo suave */
+  background-color: #d4ac0d;
   color: #000;
   border: none;
   border-radius: 12px;
@@ -116,12 +112,11 @@ button {
   cursor: pointer;
   box-shadow: 0px 5px 10px rgba(255, 204, 0, 0.4);
   transition: background-color 0.3s, transform 0.3s;
-  margin-bottom: 20px; /* Espaçamento entre os botões */
-  
+  margin-bottom: 20px;
 }
 
 button:hover {
-  background-color: #000000; /* Amarelo mais vibrante */
+  background-color: #000000;
   color: #f1c40f;
   transform: translateY(-3px); /* Eleva o botão */
 }
@@ -132,7 +127,6 @@ button:hover {
   justify-content: space-around;
   gap: 30px;
   flex-wrap: wrap; /* Permite quebra de linha em telas menores */
-  
 }
 
 /* Rodapé */
@@ -233,9 +227,9 @@ form button:hover {
 /* Estilo de navegação */
 nav {
   display: flex;
-  justify-content: center;  /* Garante que os itens fiquem centralizados */
-  gap: 20px;  /* Espaçamento entre os itens */
-  flex-wrap: wrap;  /* Permite que os itens "quebrem" em múltiplas linhas caso necessário */
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 /* Links de navegação */
@@ -247,66 +241,53 @@ nav a {
   transition: color 0.3s ease;
 }
 
-/* Efeito ao passar o mouse nos links */
 nav a:hover {
-  color: #f1c40f; /* Amarelo vibrante */
+  color: #f1c40f;
   text-decoration: underline;
-}
-
-/* Ajustes responsivos para telas pequenas */
-@media (max-width: 768px) {
-  nav {
-    justify-content: center;  /* Centraliza os itens ao invés de empurrar para a esquerda */
-    gap: 15px;  /* Reduz o espaçamento entre os itens */
-  }
-
-  nav a {
-    font-size: 16px;  /* Menor tamanho de fonte em telas pequenas */
-  }
 }
 
 /* Tabela de histórico de sorteios */
 #historicoTabela {
   width: 100%;
-  border-collapse: collapse; /* Garantir que as células fiquem coladas sem espaçamento */
+  border-collapse: collapse;
   margin-top: 20px;
   border-radius: 8px;
-  overflow: hidden; /* Para dar o efeito de bordas arredondadas */
+  overflow: hidden;
 }
 
 /* Cabeçalho da tabela */
 #historicoTabela th {
-  background-color: #333; /* Cor de fundo para as células do cabeçalho */
-  color: #f1c40f; /* Amarelo vibrante para o texto do cabeçalho */
+  background-color: #333;
+  color: #f1c40f;
   padding: 12px 20px;
   font-size: 18px;
   text-align: center;
-  border: 1px solid #f1c40f; /* Borda fina em torno das células */
+  border: 1px solid #f1c40f;
 }
 
 /* Células da tabela */
 #historicoTabela td {
-  background-color: #121212; /* Fundo escuro nas células de dados */
-  color: #fff; /* Texto branco */
+  background-color: #121212;
+  color: #fff;
   padding: 12px 20px;
   text-align: center;
   font-size: 16px;
-  border: 1px solid #444; /* Borda sutil para separar as células */
+  border: 1px solid #444;
 }
 
 /* Efeito de hover nas células da tabela */
 #historicoTabela td:hover {
-  background-color: #444; /* Altere para um fundo mais claro quando o usuário passar o mouse */
+  background-color: #444;
 }
 
 /* Estilo para as linhas ímpares da tabela */
 #historicoTabela tr:nth-child(odd) td {
-  background-color: #222; /* Cor de fundo para as linhas ímpares */
+  background-color: #222;
 }
 
 /* Estilo para as linhas pares da tabela */
 #historicoTabela tr:nth-child(even) td {
-  background-color: #121212; /* Cor de fundo para as linhas pares */
+  background-color: #121212;
 }
 
 /* Ajustes do título da seção Histórico */
@@ -316,22 +297,10 @@ nav a:hover {
   margin-bottom: 20px;
   text-shadow: 2px 2px 5px rgba(255, 204, 0, 0.6);
 }
-/* Reset de estilos padrões */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 /* Estilo geral da página de Regulamento */
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #0f0f0f; /* Fundo escuro */
-  color: #fff;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
 /* Cabeçalho */
@@ -342,125 +311,434 @@ header {
   margin-bottom: 40px;
 }
 
-nav a {
-  color: #d4ac0d; /* Amarelo suave */
-  font-size: 18px;
-  text-decoration: none;
-  margin: 0 15px;
-}
-
-nav a:hover {
-  color: #f1c40f; /* Amarelo vibrante */
-}
-
-/* Formulário de seleção da modalidade */
-#formulario {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-#formulario select {
-  padding: 10px;
-  font-size: 16px;
-  margin-top: 10px;
-  background-color: #333;
-  border: 2px solid #f1c40f;
-  color: #fff;
-  border-radius: 5px;
-  transition: background-color 0.3s, border 0.3s;
-}
-
-#formulario select:hover {
-  background-color: #444;
-  border-color: #f1c40f;
-}
-
-/* Seção de informações do regulamento */
-#informacoes {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  text-align: center;
-}
-
-#informacoes div {
-  padding: 20px;
-  background-color: #333;
-  border-radius: 8px;
-  display: none; /* Inicialmente ocultar as informações */
-}
-
-#informacoes h3 {
-  color: #f1c40f;
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-#informacoes p {
+/* Texto do regulamento */
+#regulamento p {
   font-size: 18px;
   color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: justify;
 }
 
-/* Rodapé */
-footer {
-  background-color: #222;
-  color: #bbb;
+/* Link para voltar */
+.voltar-link {
+  display: block;
+  color: #d4ac0d;
+  font-size: 18px;
+  margin-top: 20px;
+  text-decoration: none;
   text-align: center;
-  padding: 10px;
-  margin-top: 40px;
+  transition: color 0.3s ease;
 }
 
-footer p {
-  font-size: 16px;
-}
-#tabelaModalidade {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+.voltar-link:hover {
+  color: #f1c40f;
+  text-decoration: underline;
 }
 
-th, td {
-    padding: 12px;
-    text-align: center;
-    border: 1px solid #f1c40f;
-}
+/* Responsividade */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column; /* Organiza o cabeçalho em coluna */
+    align-items: center;
+  }
 
-th {
-    background-color: #333;
-    color: #f1c40f;
-}
+  .gif-header, .gif-moving {
+    width: 100px; /* Reduz o tamanho do GIF */
+  }
 
-td {
-    background-color: #121212;
-    color: #fff;
-}
+  nav {
+    flex-direction: column; /* Organiza os itens do menu em coluna */
+  }
 
-td:hover {
-    background-color: #444;
+  .button-container {
+    flex-direction: column; /* Organiza os botões em coluna */
+  }
+
+  .section {
+    padding: 40px 20px;
+  }
+
+  footer {
+    font-size: 14px;
+  }
+
+  #contato-opcoes {
+    flex-direction: column; /* Organiza os botões de contato em coluna */
+    gap: 10px;
+  }
 }
+/* Estilos para a tabela */
 #tabelaModalidade {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
 
-th, td {
-  padding: 12px;
-  text-align: center;
-  border: 1px solid #f1c40f;
+#tabelaModalidade th, #tabelaModalidade td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
 }
 
-th {
-  background-color: #333;
+#tabelaModalidade th {
+  background-color: #f1c40f;
+  color: #fff;
+  font-weight: bold;
+}
+
+#tabelaModalidade td {
+  background-color: #fff;
+}
+
+/* Estilos para as regras */
+#conteudoRegras {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  border-radius: 8px;
+}
+
+#conteudoRegras h2 {
   color: #f1c40f;
 }
 
-td {
-  background-color: #121212;
+#conteudoRegras ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+#conteudoRegras li {
+  margin-bottom: 10px;
+}
+
+/* Melhorias gerais */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0f0f0f;
+  color: #ecf0f1;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  padding: 10px;
+}
+
+header nav a {
+  color: #f1c40f;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+main {
+  padding: 20px;
+  background-color: #0f0f0f; /* Fundo escuro */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h2, h3, p {
+  text-align: justify; /* Alinha o texto à direita */
+}
+
+h2, h3 {
+  color: #f1c40f; /* Amarelo vibrante para títulos */
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 2rem;
+  border-bottom: 2px solid #f1c40f;
+  padding-bottom: 5px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+p {
+  color: #ffffff; /* Branco para o texto */
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Responsividade atualizada */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Espaço menor entre os itens no cabeçalho */
+  }
+
+  nav {
+    flex-direction: row; /* Alinha os itens lado a lado */
+    flex-wrap: wrap; /* Permite que os itens quebrem para uma nova linha se necessário */
+    justify-content: center;
+    gap: 10px; /* Espaço reduzido entre os itens */
+  }
+
+  nav a {
+    padding: 10px 20px; /* Tamanho ajustado dos links de navegação */
+    font-size: 14px; /* Texto menor para caber na tela */
+  }
+
+  .gif-header, .gif-moving {
+    width: 100px; /* Reduz o tamanho do GIF em telas pequenas */
+  }
+
+  .button-container {
+    flex-direction: column;
+    gap: 15px; /* Ajusta os botões para não ficarem muito próximos */
+  }
+
+  footer {
+    font-size: 14px;
+    padding: 15px;
+  }
+
+  #contato-opcoes {
+    flex-direction: column; /* Botões de contato empilhados */
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav a {
+    padding: 8px 15px; /* Tamanho menor dos botões em telas muito pequenas */
+    font-size: 12px; /* Texto menor */
+  }
+
+  .button-container {
+    gap: 10px; /* Reduz ainda mais o espaço entre os botões */
+  }
+
+  .header-content {
+    gap: 10px; /* Espaçamento menor para cabeçalhos mais compactos */
+  }
+
+  footer {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
+
+/* Estilos gerais para manter consistência com as outras páginas */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0f0f0f;  /* Fundo escuro */
+  color: #fff;  /* Texto branco */
+}
+
+.container {
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #1a1a1a; /* Fundo mais claro para contraste */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  text-align: center;
+  color: #f1c40f;  /* Cor amarela vibrante */
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.feedback {
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #333;
   color: #fff;
 }
 
-td:hover {
-  background-color: #444;
+.form-group button {
+  width: 100%;
+  padding: 12px;
+  background-color: #f1c40f; /* Amarelo vibrante */
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-group button:hover {
+  background-color: #d4ac0d; /* Amarelo mais suave ao passar o mouse */
+}
+
+#adminFunctions {
+  display: none;
+  margin-top: 20px;
+}
+
+#adminFunctions button {
+  width: 100%;
+  padding: 12px;
+  background-color: #d9534f;  /* Cor de destaque para botões administrativos */
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#adminFunctions button:hover {
+  background-color: #c9302c; /* Cor mais intensa ao passar o mouse */
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .container {
+      width: 90%;
+  }
+
+  h2 {
+      font-size: 1.5em;
+  }
+}
+
+/* Estilo para a Tabela */
+.tabelaHistorico {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #1a1a1a;
+  color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tabelaHistorico th, .tabelaHistorico td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #444;
+}
+
+.tabelaHistorico th {
+  background-color: #f1c40f; /* Amarelo vibrante */
+  color: #0f0f0f;
+  font-size: 1.1em;
+}
+
+.tabelaHistorico td {
+  background-color: #333; /* Fundo mais escuro para as células */
+  color: #f1c40f; /* Texto amarelo vibrante */
+  font-size: 1em;
+}
+
+.tabelaHistorico tr:nth-child(even) td {
+  background-color: #2c2c2c; /* Cor alternada para linhas pares */
+}
+
+.tabelaHistorico tr:hover {
+  background-color: #d4ac0d; /* Amarelo suave ao passar o mouse */
+  color: #0f0f0f;
+}
+
+.tabelaHistorico td, .tabelaHistorico th {
+  border: 1px solid #555;
+}
+
+.tabelaHistorico td {
+  font-family: Arial, sans-serif;
+}
+
+#resultadoHistorico p {
+  color: #f1c40f;
+  font-size: 1.2em;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Estilo de mensagens quando não houver sorteios */
+#resultadoHistorico p {
+  color: #f1c40f;
+  font-size: 1.2em;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Estilização do carrossel */
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+button.prev,
+button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 1.5rem;
+  z-index: 10;
+}
+
+button.prev {
+  left: 10px;
+}
+
+button.next {
+  right: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .carousel {
+    max-width: 300px;
+  }
 }
 

@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Histórico de Sorteios</title>
+    <title>Histórico - Tiktok da Sorte</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Menu de navegação -->
+    <!-- Barra de navegação -->
     <header>
         <nav>
             <a href="index.html">Home</a>
@@ -15,36 +15,40 @@
             <a href="historico.html">Histórico</a>
             <a href="contato.html">Contato</a>
             <a href="regulamento.html">Regulamento</a>
+            <a href="administrador.html">Administração</a>
         </nav>
     </header>
 
     <!-- Seção de Histórico -->
-    <section id="historico">
-        <h2>Histórico de Sorteios</h2>
-        <table id="historicoTabela">
-            <thead>
-                <tr>
-                    <th>Número Sorteado</th>
-                    <th>Data</th>
-                    <th>Hora</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- As linhas serão inseridas dinamicamente via JavaScript -->
-            </tbody>
-        </table>
-    </section>
+    <main>
+        <section id="historico">
+            <h2>Histórico de Sorteios</h2>
 
-    <!-- Seção de Limpeza de Histórico (Visível somente para Administrador) -->
-    <section id="limparHistorico" style="display:none;">
-        <button onclick="limparHistorico()">Limpar Histórico</button>
-    </section>
+            <!-- Seleção de mês -->
+            <div class="selecao-mes">
+                <label for="mesSelecionado">Selecione o mês:</label>
+                <select id="mesSelecionado" onchange="exibirHistorico()">
+                    <option value="1">Janeiro</option>
+                    <option value="2">Fevereiro</option>
+                    <option value="3">Março</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Maio</option>
+                    <option value="6">Junho</option>
+                    <option value="7">Julho</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Setembro</option>
+                    <option value="10">Outubro</option>
+                    <option value="11">Novembro</option>
+                    <option value="12">Dezembro</option>
+                </select>
+            </div>
 
-    <!-- Botão para acessar o admin -->
-    <section id="acessoAdmin">
-        <button onclick="verificarLoginAdmin()">Acessar Admin</button>
-    </section>
+            <!-- Exibe os sorteios -->
+            <div id="resultadoHistorico"></div>
+        </section>
+    </main>
 
+    <!-- Rodapé -->
     <footer>
         <p>&copy; 2024 Tiktok da Sorte. Todos os direitos reservados.</p>
     </footer>

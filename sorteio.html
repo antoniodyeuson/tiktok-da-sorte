@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorteio</title>
+    <title>Sorteio - Tiktok da Sorte</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Cabeçalho com o estilo igual ao Home -->
+    <!-- Barra de navegação -->
     <header>
         <nav>
             <a href="index.html">Home</a>
@@ -15,30 +15,30 @@
             <a href="historico.html">Histórico</a>
             <a href="contato.html">Contato</a>
             <a href="regulamento.html">Regulamento</a>
-          </nav>
+            <a href="administrador.html">Administração</a>
+        </nav>
     </header>
 
     <!-- Seção de Sorteio -->
     <section id="sorteio">
-        <h2>Sorteio ao Vivo</h2>
-        <button id="btnSorteio" onclick="realizarSorteio()" disabled>Sorteio</button>
-        
-        <!-- Área para exibir o número sorteado -->
-        <div id="numeroSorteado" style="display:none; margin-top: 20px; font-size: 24px; color: #f1c40f;">
-            <strong>Número Sorteado: <span id="numero"></span></strong>
-        </div>
+        <h2>Sorteio</h2>
+
+        <p id="mensagem">O sorteio ainda não foi liberado. Digite a senha no painel administrativo.</p>
+
+        <!-- Botão de Sorteio -->
+        <button id="botaoSortear" onclick="realizarSorteio()" disabled>Sortear</button>
+
+        <!-- Exibe o número sorteado -->
+        <p id="numeroSorteado"></p>
+
+        <!-- Exibe a mensagem de sucesso -->
+        <p id="mensagemSucessoSorteio"></p>
     </section>
 
-    <!-- Seção de Login para o Admin -->
-    <section id="login">
-        <h2>Área de Administração</h2>
-        <input type="password" id="adminPassword" placeholder="Digite a senha de administrador">
-        <button onclick="verificarSenha()">Entrar</button>
-    </section>
-
+    <!-- Rodapé -->
     <footer>
         <p>&copy; 2024 Tiktok da Sorte. Todos os direitos reservados.</p>
-      </footer>
+    </footer>
 
     <script src="sorteio.js"></script>
 </body>

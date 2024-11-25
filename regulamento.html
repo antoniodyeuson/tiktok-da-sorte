@@ -14,12 +14,13 @@
             <a href="historico.html">Histórico</a>
             <a href="contato.html">Contato</a>
             <a href="regulamento.html">Regulamento</a>
+            
         </nav>
     </header>
 
     <main>
-        <h1>Regulamento</h1>
-        
+        <h1>Regulamento do Sorteio</h1>
+
         <form id="formRegulamento">
             <label for="modalidadeSelect">Escolha a Modalidade:</label>
             <select id="modalidadeSelect">
@@ -27,6 +28,7 @@
                 <option value="modalidadeAcessivel">Modalidade Acessível (Heart Me)</option>
                 <option value="modalidadePaga">Modalidade Paga</option>
                 <option value="modalidadeSubinscritos">Modalidade Exclusiva para Subinscritos</option>
+                <option value="regras-tiktok">Regras TikTok</option>
             </select>
             <button type="button" onclick="exibirInformacoes()">Confirmar</button>
         </form>
@@ -47,6 +49,9 @@
             </table>
         </section>
 
+        <section id="conteudoRegras" style="display:none;">
+            <!-- Conteúdo das regras será inserido aqui pelo JavaScript -->
+        </section>
     </main>
 
     <footer>

@@ -1,45 +1,47 @@
-// Função para verificar a senha do admin
-function verificarSenha() {
-    const senhaCorreta = "12345"; // Defina a senha do admin aqui
-    const senhaDigitada = document.getElementById("adminPassword").value;
-    const btnSorteio = document.getElementById("btnSorteio");
-
-    if (senhaDigitada === senhaCorreta) {
-        alert("Senha correta! Agora você pode realizar o sorteio.");
-        btnSorteio.disabled = false;  // Habilita o botão do sorteio
-    } else {
-        alert("Senha incorreta! Tente novamente.");
-    }
-}
-
 // Função para realizar o sorteio
 function realizarSorteio() {
-    const numeroSorteado = Math.floor(Math.random() * 100) + 1; // Sorteia um número aleatório de 1 a 100
+    // Gera um número aleatório entre 1 e 100
+    const numeroSorteado = Math.floor(Math.random() * 100) + 1;
 
     // Exibe o número sorteado na página
-    const numeroElemento = document.getElementById("numero");
-    const numeroSorteadoDiv = document.getElementById("numeroSorteado");
+    document.getElementById("numeroSorteado").innerText = "Número sorteado: " + numeroSorteado;
 
-    numeroElemento.textContent = numeroSorteado; // Insere o número sorteado no elemento <span>
-    numeroSorteadoDiv.style.display = "block"; // Exibe a div com o número sorteado
+    // Exibe a mensagem de sucesso
+    document.getElementById("mensagemSucessoSorteio").innerText = "Sorteio realizado com sucesso!";
+    document.getElementById("mensagemSucessoSorteio").style.color = "green";
+
+    // Obtém a data atual
+    const dataSorteio = new Date().toLocaleDateString();
+
+    // Obtém o mês atual
+    const mesSorteio = new Date().getMonth() + 1; // Meses no JavaScript são indexados de 0 (Janeiro é 0)
+
+    // Recupera o histórico de sorteios do localStorage
+    const sorteios = JSON.parse(localStorage.getItem("sorteios")) || [];
+
+    // Adiciona o novo sorteio ao histórico
+    sorteios.push({
+        data: dataSorteio,
+        numero: numeroSorteado,
+        mes: mesSorteio
+    });
+
+    // Salva o histórico de volta no localStorage
+    localStorage.setItem("sorteios", JSON.stringify(sorteios));
 }
 
+// Função para verificar o estado do botão quando a página for carregada
+window.onload = function() {
+    const botaoSortear = document.getElementById("botaoSortear");
+    const mensagem = document.getElementById("mensagem");
 
-// Função para adicionar o sorteio ao histórico (armazenando no localStorage)
-function adicionarHistorico(numero) {
-    const data = new Date();
-    const dataFormatada = data.toLocaleDateString();
-    const horaFormatada = data.toLocaleTimeString();
+    botaoSortear.disabled = true;
 
-    const novoSorteio = { numero, data: dataFormatada, hora: horaFormatada };
-    
-    // Atualizar histórico no localStorage
-    atualizarHistorico(novoSorteio);
-}
-
-// Função para atualizar o histórico no localStorage
-function atualizarHistorico(sorteio) {
-    const sorteios = JSON.parse(localStorage.getItem("historico")) || [];
-    sorteios.push(sorteio);
-    localStorage.setItem("historico", JSON.stringify(sorteios));
-}
+    // Verifica se o sorteio foi liberado no localStorage
+    if (localStorage.getItem("sorteioLiberado") === "true") {
+        mensagem.innerText = "Sorteio liberado! Você pode realizar o sorteio agora.";
+        botaoSortear.disabled = false;
+    } else {
+        mensagem.innerText = "O sorteio ainda não foi liberado. Digite a senha no painel administrativo.";
+    }
+};
