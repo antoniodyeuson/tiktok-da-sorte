@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regulamento</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="sorteio.html">Sorteios</a>
+            <a href="historico.html">Histórico</a>
+            <a href="contato.html">Contato</a>
+            <a href="regulamento.html">Regulamento</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Regulamento</h1>
+        
+        <form id="formRegulamento">
+            <label for="modalidadeSelect">Escolha a Modalidade:</label>
+            <select id="modalidadeSelect">
+                <option value="">Selecione</option>
+                <option value="modalidadeAcessivel">Modalidade Acessível (Heart Me)</option>
+                <option value="modalidadePaga">Modalidade Paga</option>
+                <option value="modalidadeSubinscritos">Modalidade Exclusiva para Subinscritos</option>
+            </select>
+            <button type="button" onclick="exibirInformacoes()">Confirmar</button>
+        </form>
+
+        <section id="tabelaInformacoes" style="display:none;">
+            <table id="tabelaModalidade">
+                <thead>
+                    <tr>
+                        <th>Nome da Modalidade</th>
+                        <th>Forma de Participar</th>
+                        <th>Prêmios</th>
+                        <th>Objetivo da Modalidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- As informações da tabela serão preenchidas dinamicamente -->
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TikTok da Sorte - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="regulamento.js"></script>
+</body>
+</html>

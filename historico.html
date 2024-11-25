@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Sorteios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Menu de navegação -->
+    <header>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="sorteio.html">Sorteios</a>
+            <a href="historico.html">Histórico</a>
+            <a href="contato.html">Contato</a>
+            <a href="regulamento.html">Regulamento</a>
+        </nav>
+    </header>
+
+    <!-- Seção de Histórico -->
+    <section id="historico">
+        <h2>Histórico de Sorteios</h2>
+        <table id="historicoTabela">
+            <thead>
+                <tr>
+                    <th>Número Sorteado</th>
+                    <th>Data</th>
+                    <th>Hora</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- As linhas serão inseridas dinamicamente via JavaScript -->
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Seção de Limpeza de Histórico (Visível somente para Administrador) -->
+    <section id="limparHistorico" style="display:none;">
+        <button onclick="limparHistorico()">Limpar Histórico</button>
+    </section>
+
+    <!-- Botão para acessar o admin -->
+    <section id="acessoAdmin">
+        <button onclick="verificarLoginAdmin()">Acessar Admin</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Tiktok da Sorte. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="historico.js"></script>
+</body>
+</html>

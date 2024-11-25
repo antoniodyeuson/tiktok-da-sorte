@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cabeçalho com o estilo igual ao Home -->
+    <header>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="sorteio.html">Sorteios</a>
+            <a href="historico.html">Histórico</a>
+            <a href="contato.html">Contato</a>
+            <a href="regulamento.html">Regulamento</a>
+          </nav>
+    </header>
+
+    <!-- Seção de Sorteio -->
+    <section id="sorteio">
+        <h2>Sorteio ao Vivo</h2>
+        <button id="btnSorteio" onclick="realizarSorteio()" disabled>Sorteio</button>
+        
+        <!-- Área para exibir o número sorteado -->
+        <div id="numeroSorteado" style="display:none; margin-top: 20px; font-size: 24px; color: #f1c40f;">
+            <strong>Número Sorteado: <span id="numero"></span></strong>
+        </div>
+    </section>
+
+    <!-- Seção de Login para o Admin -->
+    <section id="login">
+        <h2>Área de Administração</h2>
+        <input type="password" id="adminPassword" placeholder="Digite a senha de administrador">
+        <button onclick="verificarSenha()">Entrar</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Tiktok da Sorte. Todos os direitos reservados.</p>
+      </footer>
+
+    <script src="sorteio.js"></script>
+</body>
+</html>
